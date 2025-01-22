@@ -14,7 +14,21 @@ function agregarAmigo() {
     }
 
     amigos.push(nombre);
-    input.value = ""; // Limpiar el campo de entrada
+    input.value = ""; // Limpia el campo de entrada
     mostrarLista();
 }
+
+// Función para mostrar la lista de amigos
+function mostrarLista() {
+    const listaAmigos = document.getElementById('listaAmigos');
+    listaAmigos.innerHTML = ""; // Limpiar la lista antes de mostrarla
+
+    //bucle for para recorrer el arreglo amigos
+    for (let i = 0; i < amigos.length; i++) {
+        const li = document.createElement('li'); // Crear un nuevo elemento <li>
+        li.textContent = amigos[i]; // Asignar el nombre al contenido del <li>
+        listaAmigos.appendChild(li); // Agregar el <li> a la lista
+    }
+}
+
 
